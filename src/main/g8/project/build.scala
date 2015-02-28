@@ -16,8 +16,11 @@ object $name;format="Camel"$Build extends Build {
       version := Version,
       scalacOptions ++= Seq("-deprecation", "-feature"),
       resolvers ++= Seq(Resolver.url("nexus-ivy", url("http://cq01-rdqa-pool106.cq01.baidu.com:8081/nexus/content/groups/public/"))(Resolver.ivyStylePatterns),
-            "nexus-m2" at "http://cq01-rdqa-pool106.cq01.baidu.com:8081/nexus/content/groups/public/",
-            Classpaths.typesafeReleases),
+            "nexus-m2" at "http://cq01-rdqa-pool106.cq01.baidu.com:8081/nexus/content/groups/public/"),
+      // resolvers ++= Seq(Resolver.url("nexus-ivy", url("http://cq01-rdqa-pool106.cq01.baidu.com:8081/nexus/content/groups/public/"))(Resolver.ivyStylePatterns),
+      //      "nexus-m2" at "http://cq01-rdqa-pool106.cq01.baidu.com:8081/nexus/content/groups/public/",
+      //      Classpaths.typesafeReleases),
+      externalResolvers := Resolver.withDefaultResolvers(resolvers.value, mavenCentral = false),
       libraryDependencies ++= Seq(
         "ch.qos.logback" % "logback-classic" % "1.1.2"
       )
