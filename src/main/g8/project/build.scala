@@ -14,6 +14,7 @@ object $name;format="Camel"$Build extends Build {
       organization := Organization,
       name := Name,
       version := Version,
+      scalaVersion := ScalaVersion,
       scalacOptions ++= Seq("-deprecation", "-feature"),
       resolvers ++= Seq(Resolver.url("nexus-ivy", url("http://cq01-rdqa-pool106.cq01.baidu.com:8081/nexus/content/groups/public/"))(Resolver.ivyStylePatterns),
             "nexus-m2" at "http://cq01-rdqa-pool106.cq01.baidu.com:8081/nexus/content/groups/public/"),
