@@ -22,6 +22,14 @@ object $name;format="Camel"$Build extends Build {
       //      "nexus-m2" at "http://cq01-rdqa-pool106.cq01.baidu.com:8081/nexus/content/groups/public/",
       //      Classpaths.typesafeReleases),
       externalResolvers := Resolver.withDefaultResolvers(resolvers.value, mavenCentral = false),
+      //      publishTo := {
+      //        val nexus = "http://cq01-rdqa-pool106.cq01.baidu.com:8081/nexus/content/repositories/"
+      //        if (isSnapshot.value)
+      //          Some("snapshots" at nexus + "baidu-snapshot")
+      //        else
+      //          Some("releases" at nexus + "baidu")
+      //      },
+      //      credentials += Credentials("Sonatype Nexus Repository Manager", "cq01-rdqa-pool106.cq01.baidu.com", "admin", "!@34QWer"),
       libraryDependencies ++= Seq(
         "ch.qos.logback" % "logback-classic" % "1.1.2"
       )
